@@ -3,12 +3,12 @@ import sys
 import time
 import openai
 import pyttsx3
-# from tkinter import *
+from colorama import Fore, Back, Style
 
 python = "Hãy cài đặt python để đảm bảo ứng dụng được chạy!\n"
 
 for a in python:
-    sys.stdout.write(a)
+    sys.stdout.write(Fore.GREEN + a)
     sys.stdout.flush()
     time.sleep(0.02)
 time.sleep(1)
@@ -38,7 +38,7 @@ time.sleep(2)
 fix_speech = "Nếu bot không nói được tiếng Việt vui lòng xem hết video này và làm theo! https://youtu.be/qVMHoCtjLag?t=847\n"
 
 for d in fix_speech:
-    sys.stdout.write(d)
+    sys.stdout.write(Fore.RED + d)
     sys.stdout.flush()
     time.sleep(0.02)
 time.sleep(5)
@@ -83,7 +83,7 @@ def text():
     reply = completion.choices[0].message.content
 
     for begin in reply:
-        sys.stdout.write(begin)
+        sys.stdout.write(Style.RESET_ALL + begin)
         sys.stdout.flush()
         time.sleep(0.02)
 
@@ -93,7 +93,7 @@ def text():
 select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ? (lời / chữ / lời và chữ)\n"
 
 for begin in select_option:
-    sys.stdout.write(begin)
+    sys.stdout.write(Style.RESET_ALL + begin)
     sys.stdout.flush()
     time.sleep(0.02)
 
