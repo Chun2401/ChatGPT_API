@@ -1,4 +1,4 @@
-([('main.exe', 'E:\\ChatGPT\\ChatGPT\\build\\main\\main.exe', 'EXECUTABLE'),
+([('main.exe', 'E:\\New\\ChatGPT_API\\build\\main\\main.exe', 'EXECUTABLE'),
   ('python311.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\python311.dll',
@@ -119,11 +119,11 @@
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\DLLs\\libffi-8.dll',
    'BINARY'),
   ('base_library.zip',
-   'E:\\ChatGPT\\ChatGPT\\build\\main\\base_library.zip',
-   'DATA'),
-  ('certifi\\py.typed',
-   'C:\\Users\\trung\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\certifi\\py.typed',
+   'E:\\New\\ChatGPT_API\\build\\main\\base_library.zip',
    'DATA'),
   ('certifi\\cacert.pem',
    'C:\\Users\\trung\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\certifi\\cacert.pem',
+   'DATA'),
+  ('certifi\\py.typed',
+   'C:\\Users\\trung\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\certifi\\py.typed',
    'DATA')],)
