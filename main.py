@@ -10,19 +10,30 @@ python = "Hãy cài đặt python để đảm bảo ứng dụng được chạ
 for a in python:
     sys.stdout.write(a)
     sys.stdout.flush()
-    time.sleep(0.03)
+    time.sleep(0.02)
 
 python2 = "Nhấn CÀI ĐẶT python trong microsoft strore để cài đặt một cách dể dàng!\n"
 
 for b in python2:
     sys.stdout.write(b)
     sys.stdout.flush()
-    time.sleep(0.03)
+    time.sleep(0.02)
 
 os.system("python")
 os.system("python --version")
 os.system("pip install openai")
 os.system("pip install pyttsx3")
+
+fix_speech = "Nếu bot không nói được tiếng Việt vui lòng xem hết video này và làm theo! https://youtu.be/qVMHoCtjLag?t=847\n"
+
+for c in fix_speech:
+    sys.stdout.write(c)
+    sys.stdout.flush()
+    time.sleep(0.02)
+time.sleep(5)
+
+os.system("start https://youtu.be/qVMHoCtjLag?t=847")
+
 
 engine = pyttsx3.init()
 
