@@ -1,3 +1,4 @@
+from Setup_file import setup
 import os
 import sys
 import time
@@ -7,9 +8,6 @@ from colorama import Fore, Back, Style
 from colorama import init, AnsiToWin32
 init(wrap=False)
 stream = AnsiToWin32(sys.stderr).stream
-from Setup_file import setup
-
-
 
 
 engine = pyttsx3.init()
@@ -64,6 +62,12 @@ def speech():
     engine.runAndWait()
 
 
+def check(String):
+    if "google" in x:
+        os.system("start https://www.google.com/search?q=" +
+                  x.replace(" ", "+"))
+
+
 # def text():
 #     reply = completion.choices[0].message.content
 
@@ -84,7 +88,7 @@ input_a = input("Bạn: ")
 print(Fore.RESET + "\n-----------------------------\n")
 
 if input_a == "y" or input_a == "Y":
-    
+
     setup()
 
     select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
@@ -99,7 +103,7 @@ if input_a == "y" or input_a == "Y":
     print(Fore.RESET + "\n-----------------------------\n")
 
     option(n)
-    
+
 elif input_a == "N" or input_a == "n":
     select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
         "(" + Fore.CYAN + "lời" + Fore.RESET + " " + "/" + Fore.LIGHTCYAN_EX + " " + "chữ" + \
@@ -116,12 +120,21 @@ elif input_a == "N" or input_a == "n":
 
 
 while True:
+
     print(Fore.RESET + "\n-----------------------------\n")
     x = input("Bạn: ")
-    completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": x}]
-    )
-    option(x)
-    if x == 'tạm biệt':
-        break
+
+    if x == "mở google":
+        os.system("start https://www.google.com")
+    elif x == "tìm kiếm google":
+        search = input("Tìm kiếm: ")
+        os.system("start https://www.google.com/search?q=" +
+                  search.replace(" ", "+"))
+    else:
+        completion = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": x}]
+        )
+        option(x)
+        if x == 'tạm biệt':
+            break
