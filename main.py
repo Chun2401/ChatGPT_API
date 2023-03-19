@@ -15,7 +15,7 @@ engine = pyttsx3.init()
 voices = engine.getProperty("voices")
 vi_voice = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\MSTTS_V110_viVN_An"
 engine.setProperty("voice", vi_voice)
-openai.api_key = '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'
+openai.api_key = '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'
 engine.connect
 
 completion = openai.ChatCompletion.create(
