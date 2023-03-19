@@ -62,12 +62,6 @@ def speech():
     engine.runAndWait()
 
 
-def check(String):
-    if "google" in x:
-        os.system("start https://www.google.com/search?q=" +
-                  x.replace(" ", "+"))
-
-
 # def text():
 #     reply = completion.choices[0].message.content
 
@@ -77,7 +71,6 @@ def check(String):
 #         time.sleep(0.02)
 
 #     print(Fore.RESET + "\n-----------------------------\n")
-
 
 error = "Kiểm tra file! (y/N)\n\n"
 for a in error:
@@ -124,12 +117,24 @@ while True:
     print(Fore.RESET + "\n-----------------------------\n")
     x = input("Bạn: ")
 
-    if x == "mở google":
-        os.system("start https://www.google.com")
-    elif x == "tìm kiếm google":
-        search = input("Tìm kiếm: ")
+    if "tìm kiếm" in x:
+        searchGg = input("\nTìm kiếm: ")
+        print("\n")
+        for search_value_Gg in searchGg:
+            sys.stdout.write(search_value_Gg)
+            sys.stdout.flush()
+            time.sleep(0.02)
         os.system("start https://www.google.com/search?q=" +
-                  search.replace(" ", "+"))
+                  searchGg.replace(" ", "+"))
+    elif x == "tôi muốn nghe nhạc" or x == "Tôi muốn nghe nhạc":
+        searchYt = input("\nBài gì đây: ")
+        print("\n")
+        for search_value_Yt in searchYt:
+            sys.stdout.write(search_value_Yt)
+            sys.stdout.flush()
+            time.sleep(0.02)
+        os.system("start https://www.youtube.com/results?search_query=" +
+                  searchYt.replace(" ", "+"))
     else:
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
