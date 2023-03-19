@@ -36,8 +36,6 @@ def setup():
     time.sleep(2)
     os.system("pip install pyttsx3")
     time.sleep(2)
-    os.system("pip install pyinstall")
-    time.sleep(3)
 
     print("\n-------------------- \n")
     fix_speech = "Nếu bot không nói được tiếng Việt vui lòng xem hết video này và làm theo! https://youtu.be/qVMHoCtjLag?t=847\n"
@@ -50,13 +48,14 @@ def setup():
     os.system("start https://youtu.be/qVMHoCtjLag?t=847")
 
 
+
 engine = pyttsx3.init()
 
 voices = engine.getProperty("voices")
 vi_voice = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\MSTTS_V110_viVN_An"
 engine.setProperty("voice", vi_voice)
 openai.api_key = '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'
-
+engine.connect
 
 completion = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
@@ -82,13 +81,24 @@ def option(String):
             time.sleep(0.02)
         speech()
     else:
-        print("\n\t gặp lỗi...")
+        default = "Nếu bạn không chọn, mặc định sẽ là kiểu " + Fore.LIGHTCYAN_EX + "Chữ \n\n"
+        for df in default:
+            sys.stdout.write(df)
+            sys.stdout.flush()
+            time.sleep(0.02)
+        print(Fore.RESET + "Chọn mặc định: " + Fore.LIGHTCYAN_EX + "Chữ \n\n")
+
+        reply = completion.choices[0].message.content
+        for begin in reply:
+            sys.stdout.write(Fore.LIGHTCYAN_EX + begin)
+            sys.stdout.flush()
+            time.sleep(0.02)
 
 
 def speech():
+    print("\n")
     engine.say(completion.choices[0].message.content)
     engine.runAndWait()
-    print("\n-----------------------------\n")
 
 
 # def text():
@@ -111,7 +121,22 @@ input_a = input("Bạn: ")
 print(Fore.RESET + "\n-----------------------------\n")
 
 if input_a == "y" or input_a == "Y":
+    
     setup()
+
+    select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
+        "(" + Fore.CYAN + "lời" + Fore.RESET + " " + "/" + Fore.LIGHTCYAN_EX + " " + "chữ" + \
+        Fore.RESET + " " + "/" + Fore.YELLOW + " " + "lời và chữ" + Fore.RESET + ")\n\n"
+
+    for begin in select_option:
+        sys.stdout.write(begin)
+        sys.stdout.flush()
+        time.sleep(0.02)
+    n = input(Fore.RESET+"Bạn: ")
+    print(Fore.RESET + "\n-----------------------------\n")
+
+    option(n)
+    
 elif input_a == "N" or input_a == "n":
     select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
         "(" + Fore.CYAN + "lời" + Fore.RESET + " " + "/" + Fore.LIGHTCYAN_EX + " " + "chữ" + \
