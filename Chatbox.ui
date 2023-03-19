@@ -71,7 +71,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="btnGoogle">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -93,7 +93,7 @@
       <string>Google</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="btnYoutube">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -115,7 +115,7 @@
       <string>Youtube</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="btnFb">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -192,7 +192,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="btnSend">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -212,7 +212,6 @@
     </property>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <resources/>
  <connections/>

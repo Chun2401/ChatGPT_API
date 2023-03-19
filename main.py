@@ -4,6 +4,9 @@ import time
 import openai
 import pyttsx3
 from colorama import Fore, Back, Style
+from colorama import init, AnsiToWin32
+init(wrap=False)
+stream = AnsiToWin32(sys.stderr).stream
 from Setup_file import setup
 
 
