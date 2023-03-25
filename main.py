@@ -10,12 +10,14 @@ init(wrap=False)
 stream = AnsiToWin32(sys.stderr).stream
 
 
+api_key = input("Hãy nhập key của bạn: ")
+
 engine = pyttsx3.init()
 
 voices = engine.getProperty("voices")
 vi_voice = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\MSTTS_V110_viVN_An"
 engine.setProperty("voice", vi_voice)
-openai.api_key = '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'
+openai.api_key = api_key
 engine.connect
 
 completion = openai.ChatCompletion.create(
