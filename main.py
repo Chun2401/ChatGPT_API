@@ -30,6 +30,11 @@ def option(String):
 
     if n == 'lời' or n == 'loi' or n == 'Loi' or n == 'Lời':
         speech()
+        fix_speech = "Nếu bot không nói được tiếng Việt vui lòng xem video này và làm theo! (https://youtu.be/qVMHoCtjLag?t=847)\n"
+        for d in fix_speech:
+            sys.stdout.write(Fore.RED + d + Fore.RESET)
+            sys.stdout.flush()
+            time.sleep(0.02)
     elif n == 'chữ' or n == 'Chữ' or n == 'chu' or n == 'Chu':
         reply = completion.choices[0].message.content
         for begin in reply:

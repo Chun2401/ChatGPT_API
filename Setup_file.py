@@ -1,45 +1,48 @@
 import os
 import sys
 import time
+import pyttsx3
 from colorama import Fore, Back, Style
 # from colorama import init, AnsiToWin32
 # init(wrap=False)
 # stream = AnsiToWin32(sys.stderr).stream
 
+engine = pyttsx3.init()
+
+voices = engine.getProperty("voices")
+vi_voice = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\MSTTS_V110_viVN_An"
+engine.setProperty("voice", vi_voice)
+engine.connect
+
+
 def setup():
-    python = "Hãy cài đặt Python để đảm bảo ứng dụng được chạy!\n\n"
-    for a in python:
-        sys.stdout.write(a)
-        sys.stdout.flush()
-        time.sleep(0.02)
-    time.sleep(1)
+    check_python = os.system("python --version")
+    if check_python == 1:
+        python = "Hãy cài đặt Python để đảm bảo ứng dụng được chạy!\n\n"
+        for a in python:
+            sys.stdout.write(a)
+            sys.stdout.flush()
+            time.sleep(0.02)
+        os.system(
+            "start https://www.python.org/ftp/python/3.11.2/python-3.11.2-amd64.exe")
+        os.system("exit")
+    else:
+        os.system("pip install --upgrade pip")
+        os.system("pip install openai")
+        os.system("pip install pyttsx3")
 
-    python2 = "Nhấn CÀI ĐẶT Python trong " + Fore.CYAN + Back.WHITE + "Microsoft Strore"+ Back.RESET +  Fore.RESET + " để cài đặt!\n\n"
-    for b in python2:
-        sys.stdout.write(b)
-        sys.stdout.flush()
-        time.sleep(0.02)
-    time.sleep(1)
+        Check_Speech = "Kiểm tra giọng nói của AI...!\n\n"
+        for speech in Check_Speech:
+            sys.stdout.write(speech)
+            sys.stdout.flush()
+            time.sleep(0.02)
+        engine.say("Xin chào! tôi là AI của OpenAI.")
 
-    python3 = "Nếu đã cài Python hãy nhập 'exit()'\n\n"
-    for c in python3:
-        sys.stdout.write(c)
-        sys.stdout.flush()
-        time.sleep(0.02)
-
-    time.sleep(2)
-    os.system("python")
-    os.system("pip install --upgrade pip")
-    os.system("pip install openai")
-    os.system("pip install pyttsx3")
-
-
-    print("\n-------------------- \n")
-    fix_speech = "Nếu bot không nói được tiếng Việt vui lòng xem hết video này và làm theo! (https://youtu.be/qVMHoCtjLag?t=847)\n"
-    for d in fix_speech:
-        sys.stdout.write(Fore.RED + d)
-        sys.stdout.flush()
-        time.sleep(0.02)
-    print(Fore.RESET + "\n-------------------- \n")
-    time.sleep(5)
-    os.system("start https://youtu.be/qVMHoCtjLag?t=847")
+        print("\n-------------------- \n")
+        fix_speech = "Nếu bot không nói được tiếng Việt vui lòng xem video này và làm theo! (https://youtu.be/qVMHoCtjLag?t=847)\n"
+        for d in fix_speech:
+            sys.stdout.write(Fore.RED + d)
+            sys.stdout.flush()
+            time.sleep(0.02)
+        print(Fore.RESET + "\n-------------------- \n")
+        time.sleep(3)
