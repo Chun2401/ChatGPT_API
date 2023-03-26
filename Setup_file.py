@@ -1,8 +1,10 @@
+
 import os
 import sys
 import time
 import pyttsx3
 from colorama import Fore, Back, Style
+
 # from colorama import init, AnsiToWin32
 # init(wrap=False)
 # stream = AnsiToWin32(sys.stderr).stream
@@ -25,6 +27,10 @@ def setup():
             time.sleep(0.02)
         os.system(
             "start https://www.python.org/ftp/python/3.11.2/python-3.11.2-amd64.exe")
+        time.sleep(60)
+        os.system("pip install --upgrade pip")
+        os.system("pip install openai")
+        os.system("pip install pyttsx3")
         os.system("exit")
     else:
         os.system("pip install --upgrade pip")
@@ -46,3 +52,7 @@ def setup():
             time.sleep(0.02)
         print(Fore.RESET + "\n-------------------- \n")
         time.sleep(3)
+        os.system("python main.py")
+
+
+setup()

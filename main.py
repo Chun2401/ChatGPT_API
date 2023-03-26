@@ -9,13 +9,14 @@ from colorama import init, AnsiToWin32
 init(wrap=False)
 stream = AnsiToWin32(sys.stderr).stream
 
+key_api = input("Hãy nhập Key api của bạn ở đây: ")
 
 engine = pyttsx3.init()
 
 voices = engine.getProperty("voices")
 vi_voice = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\MSTTS_V110_viVN_An"
 engine.setProperty("voice", vi_voice)
-openai.api_key = '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'
+openai.api_key = key_api
 engine.connect
 
 completion = openai.ChatCompletion.create(
