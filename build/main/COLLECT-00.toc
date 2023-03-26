@@ -7,12 +7,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\VCRUNTIME140.dll',
    'BINARY'),
-  ('pywin32_system32\\pythoncom311.dll',
-   'C:\\Users\\trung\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\pywin32_system32\\pythoncom311.dll',
-   'BINARY'),
-  ('pywin32_system32\\pywintypes311.dll',
-   'C:\\Users\\trung\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\pywin32_system32\\pywintypes311.dll',
-   'BINARY'),
   ('_multiprocessing.pyd',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\DLLs\\_multiprocessing.pyd',
@@ -61,9 +55,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\DLLs\\unicodedata.pyd',
    'EXTENSION'),
-  ('_win32sysloader.pyd',
-   'C:\\Users\\trung\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\win32\\_win32sysloader.pyd',
-   'EXTENSION'),
   ('yarl\\_quoting_c.cp311-win_amd64.pyd',
    'C:\\Users\\trung\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\yarl\\_quoting_c.cp311-win_amd64.pyd',
    'EXTENSION'),
@@ -106,32 +97,29 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\DLLs\\_uuid.pyd',
    'EXTENSION'),
-  ('pywintypes311.dll',
-   'C:\\Users\\trung\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\pywin32_system32\\pywintypes311.dll',
+  ('libssl-1_1.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\DLLs\\libssl-1_1.dll',
    'BINARY'),
   ('libcrypto-1_1.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\DLLs\\libcrypto-1_1.dll',
    'BINARY'),
-  ('libssl-1_1.dll',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\DLLs\\libssl-1_1.dll',
-   'BINARY'),
   ('libffi-8.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\DLLs\\libffi-8.dll',
    'BINARY'),
+  ('MSVCP140.dll', 'C:\\WINDOWS\\system32\\MSVCP140.dll', 'BINARY'),
   ('VCRUNTIME140_1.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\VCRUNTIME140_1.dll',
    'BINARY'),
-  ('MSVCP140.dll', 'C:\\WINDOWS\\system32\\MSVCP140.dll', 'BINARY'),
   ('base_library.zip',
    'E:\\New\\ChatGPT_API\\build\\main\\base_library.zip',
    'DATA'),
-  ('certifi\\py.typed',
-   'C:\\Users\\trung\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\certifi\\py.typed',
-   'DATA'),
   ('certifi\\cacert.pem',
    'C:\\Users\\trung\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\certifi\\cacert.pem',
+   'DATA'),
+  ('certifi\\py.typed',
+   'C:\\Users\\trung\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\certifi\\py.typed',
    'DATA')],)

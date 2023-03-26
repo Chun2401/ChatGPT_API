@@ -3,58 +3,45 @@ import os
 import sys
 import time
 import openai
-import pyttsx3
 from colorama import Fore, Back, Style
 from colorama import init, AnsiToWin32
 init(wrap=False)
 stream = AnsiToWin32(sys.stderr).stream
 
-key_api = input("Hãy nhập Key api của bạn ở đây: ")
+print("\n\n")
 
-engine = pyttsx3.init()
+chun = (" ▄████▄   ██░ ██  █    ██  ███▄    █ \n") + \
+    ("▒██▀ ▀█  ▓██░ ██▒ ██  ▓██▒ ██ ▀█   █ \n") + \
+    ("▒▓█    ▄ ▒██▀▀██░▓██  ▒██░▓██  ▀█ ██▒\n") + \
+    ("▒▓▓▄ ▄██▒░▓█ ░██ ▓▓█  ░██░▓██▒  ▐▌██▒\n") + \
+    ("▒ ▓███▀ ░░▓█▒░██▓▒▒█████▓ ▒██░   ▓██░\n") + \
+    ("░ ░▒ ▒  ░ ▒ ░░▒░▒░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒ \n") + \
+    ("  ░  ▒    ▒ ░▒░ ░░░▒░ ░ ░ ░ ░░   ░ ▒░\n") + \
+    ("  ░  ▒    ▒ ░▒░ ░░░▒░ ░ ░ ░ ░░   ░ ▒░\n") + \
+    ("░ ░       ░  ░  ░   ░              ░ \n") + \
+    ("░") +\
+    ("\n\n")
 
-voices = engine.getProperty("voices")
-vi_voice = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\MSTTS_V110_viVN_An"
-engine.setProperty("voice", vi_voice)
+
+for ten in chun:
+    sys.stdout.writelines(Fore.YELLOW + ten)
+    # sys.stdout.flush()
+    # time.sleep(0.01)
+
+key_api = input(Fore.RESET + "Hãy nhập Key api của bạn ở đây: ")
 openai.api_key = key_api
-engine.connect
 
+completion = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[{"role": "user", "content": "Xin chào"}]
+)
 
-# def option(String):
-
-#     if n == 'lời' or n == 'loi' or n == 'Loi' or n == 'Lời':
-#         speech()
-#         fix_speech = "Nếu bot không nói được tiếng Việt vui lòng xem video này và làm theo! (https://youtu.be/qVMHoCtjLag?t=847)\n"
-#         for d in fix_speech:
-#             sys.stdout.write(Fore.RED + d + Fore.RESET)
-#             sys.stdout.flush()
-#             time.sleep(0.02)
-#     elif n == 'chữ' or n == 'Chữ' or n == 'chu' or n == 'Chu':
-#         reply = completion.choices[0].message.content
-#         for begin in reply:
-#             sys.stdout.write(Fore.LIGHTCYAN_EX + begin)
-#             sys.stdout.flush()
-#             time.sleep(0.02)
-#     elif n == 'lời và chữ' or n == 'Lời Và Chữ' or n == 'Loi Va Chu' or n == 'loi va chu':
-#         reply = completion.choices[0].message.content
-#         for begin in reply:
-#             sys.stdout.write(Fore.YELLOW + begin)
-#             sys.stdout.flush()
-#             time.sleep(0.02)
-#         speech()
-#     else:
-#         default = "Nếu bạn không chọn, mặc định sẽ là kiểu " + Fore.LIGHTCYAN_EX + "Chữ \n\n"
-#         for df in default:
-#             sys.stdout.write(df)
-#             sys.stdout.flush()
-#             time.sleep(0.02)
-#         print(Fore.RESET + "Chọn mặc định: " + Fore.LIGHTCYAN_EX + "Chữ \n\n")
-
-#         reply = completion.choices[0].message.content
-#         for begin in reply:
-#             sys.stdout.write(Fore.LIGHTCYAN_EX + begin)
-#             sys.stdout.flush()
-#             time.sleep(0.02)
+print("\n")
+reply = completion.choices[0].message.content
+for begin in reply:
+    sys.stdout.write(Fore.YELLOW + begin)
+    sys.stdout.flush()
+    time.sleep(0.02)
 
 
 def speech():
@@ -71,68 +58,6 @@ def text(String):
         sys.stdout.flush()
         time.sleep(0.02)
 
-# error = "Kiểm tra file! (y/N)\n\n"
-# for a in error:
-#     sys.stdout.write(a)
-#     sys.stdout.flush()
-#     time.sleep(0.02)
-# input_a = input("Bạn: ")
-# print(Fore.RESET + "\n-----------------------------\n")
-
-# if input_a == "y" or input_a == "Y":
-
-#     setup()
-
-#     select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
-#         "(" + Fore.CYAN + "lời" + Fore.RESET + " " + "/" + Fore.LIGHTCYAN_EX + " " + "chữ" + \
-#         Fore.RESET + " " + "/" + Fore.YELLOW + " " + "lời và chữ" + Fore.RESET + ")\n\n"
-
-#     for begin in select_option:
-#         sys.stdout.write(begin)
-#         sys.stdout.flush()
-#         time.sleep(0.02)
-#     n = input(Fore.RESET+"Bạn: ")
-#     print(Fore.RESET + "\n-----------------------------\n")
-
-#     option(n)
-
-# elif input_a == "N" or input_a == "n":
-#     select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
-#         "(" + Fore.CYAN + "lời" + Fore.RESET + " " + "/" + Fore.LIGHTCYAN_EX + " " + "chữ" + \
-#         Fore.RESET + " " + "/" + Fore.YELLOW + " " + "lời và chữ" + Fore.RESET + ")\n\n"
-
-#     for begin in select_option:
-#         sys.stdout.write(begin)
-#         sys.stdout.flush()
-#         time.sleep(0.02)
-#     n = input(Fore.RESET+"Bạn: ")
-#     print(Fore.RESET + "\n-----------------------------\n")
-
-#     option(n)
-
-
-# select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
-#     "(" + Fore.CYAN + "lời" + Fore.RESET + " " + "/" + Fore.LIGHTCYAN_EX + " " + "chữ" + \
-#     Fore.RESET + " " + "/" + Fore.YELLOW + " " + "lời và chữ" + Fore.RESET + ")\n\n"
-
-# for begin in select_option:
-#     sys.stdout.write(begin)
-#     sys.stdout.flush()
-#     time.sleep(0.02)
-# n = input(Fore.RESET+"Bạn: ")
-# print(Fore.RESET + "\n-----------------------------\n")
-
-completion = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages=[{"role": "user", "content": "Xin chào"}]
-)
-
-print("\n")
-reply = completion.choices[0].message.content
-for begin in reply:
-    sys.stdout.write(Fore.YELLOW + begin)
-    sys.stdout.flush()
-    time.sleep(0.02)
 
 while True:
 
@@ -143,7 +68,7 @@ while True:
         searchGg = input("\nTìm kiếm: ")
         print("\n")
         for search_value_Gg in searchGg:
-            sys.stdout.write(search_value_Gg)
+            sys.stdout.write(Fore.YELLOW + search_value_Gg)
             sys.stdout.flush()
             time.sleep(0.02)
         os.system("start https://www.google.com/search?q=" +
@@ -152,7 +77,7 @@ while True:
         searchYt = input("\nBài gì đây: ")
         print("\n")
         for search_value_Yt in searchYt:
-            sys.stdout.write(search_value_Yt)
+            sys.stdout.write(Fore.YELLOW + search_value_Yt)
             sys.stdout.flush()
             time.sleep(0.02)
         os.system("start https://www.youtube.com/results?search_query=" +
@@ -165,4 +90,5 @@ while True:
         )
         text(x)
         if x == 'tạm biệt':
+            time.sleep(2)
             break
