@@ -1,4 +1,4 @@
-from Setup_file import setup
+
 import os
 import sys
 import time
@@ -19,47 +19,42 @@ engine.setProperty("voice", vi_voice)
 openai.api_key = key_api
 engine.connect
 
-completion = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages=[{"role": "user", "content": "Xin chào"}]
-)
 
+# def option(String):
 
-def option(String):
+#     if n == 'lời' or n == 'loi' or n == 'Loi' or n == 'Lời':
+#         speech()
+#         fix_speech = "Nếu bot không nói được tiếng Việt vui lòng xem video này và làm theo! (https://youtu.be/qVMHoCtjLag?t=847)\n"
+#         for d in fix_speech:
+#             sys.stdout.write(Fore.RED + d + Fore.RESET)
+#             sys.stdout.flush()
+#             time.sleep(0.02)
+#     elif n == 'chữ' or n == 'Chữ' or n == 'chu' or n == 'Chu':
+#         reply = completion.choices[0].message.content
+#         for begin in reply:
+#             sys.stdout.write(Fore.LIGHTCYAN_EX + begin)
+#             sys.stdout.flush()
+#             time.sleep(0.02)
+#     elif n == 'lời và chữ' or n == 'Lời Và Chữ' or n == 'Loi Va Chu' or n == 'loi va chu':
+#         reply = completion.choices[0].message.content
+#         for begin in reply:
+#             sys.stdout.write(Fore.YELLOW + begin)
+#             sys.stdout.flush()
+#             time.sleep(0.02)
+#         speech()
+#     else:
+#         default = "Nếu bạn không chọn, mặc định sẽ là kiểu " + Fore.LIGHTCYAN_EX + "Chữ \n\n"
+#         for df in default:
+#             sys.stdout.write(df)
+#             sys.stdout.flush()
+#             time.sleep(0.02)
+#         print(Fore.RESET + "Chọn mặc định: " + Fore.LIGHTCYAN_EX + "Chữ \n\n")
 
-    if n == 'lời' or n == 'loi' or n == 'Loi' or n == 'Lời':
-        speech()
-        fix_speech = "Nếu bot không nói được tiếng Việt vui lòng xem video này và làm theo! (https://youtu.be/qVMHoCtjLag?t=847)\n"
-        for d in fix_speech:
-            sys.stdout.write(Fore.RED + d + Fore.RESET)
-            sys.stdout.flush()
-            time.sleep(0.02)
-    elif n == 'chữ' or n == 'Chữ' or n == 'chu' or n == 'Chu':
-        reply = completion.choices[0].message.content
-        for begin in reply:
-            sys.stdout.write(Fore.LIGHTCYAN_EX + begin)
-            sys.stdout.flush()
-            time.sleep(0.02)
-    elif n == 'lời và chữ' or n == 'Lời Và Chữ' or n == 'Loi Va Chu' or n == 'loi va chu':
-        reply = completion.choices[0].message.content
-        for begin in reply:
-            sys.stdout.write(Fore.YELLOW + begin)
-            sys.stdout.flush()
-            time.sleep(0.02)
-        speech()
-    else:
-        default = "Nếu bạn không chọn, mặc định sẽ là kiểu " + Fore.LIGHTCYAN_EX + "Chữ \n\n"
-        for df in default:
-            sys.stdout.write(df)
-            sys.stdout.flush()
-            time.sleep(0.02)
-        print(Fore.RESET + "Chọn mặc định: " + Fore.LIGHTCYAN_EX + "Chữ \n\n")
-
-        reply = completion.choices[0].message.content
-        for begin in reply:
-            sys.stdout.write(Fore.LIGHTCYAN_EX + begin)
-            sys.stdout.flush()
-            time.sleep(0.02)
+#         reply = completion.choices[0].message.content
+#         for begin in reply:
+#             sys.stdout.write(Fore.LIGHTCYAN_EX + begin)
+#             sys.stdout.flush()
+#             time.sleep(0.02)
 
 
 def speech():
@@ -68,55 +63,76 @@ def speech():
     engine.runAndWait()
 
 
-# def text():
-#     reply = completion.choices[0].message.content
+def text(String):
+    reply = completion.choices[0].message.content
 
-#     for begin in reply:
-#         sys.stdout.write(Fore.YELLOW + begin)
+    for begin in reply:
+        sys.stdout.write(Fore.YELLOW + begin)
+        sys.stdout.flush()
+        time.sleep(0.02)
+
+# error = "Kiểm tra file! (y/N)\n\n"
+# for a in error:
+#     sys.stdout.write(a)
+#     sys.stdout.flush()
+#     time.sleep(0.02)
+# input_a = input("Bạn: ")
+# print(Fore.RESET + "\n-----------------------------\n")
+
+# if input_a == "y" or input_a == "Y":
+
+#     setup()
+
+#     select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
+#         "(" + Fore.CYAN + "lời" + Fore.RESET + " " + "/" + Fore.LIGHTCYAN_EX + " " + "chữ" + \
+#         Fore.RESET + " " + "/" + Fore.YELLOW + " " + "lời và chữ" + Fore.RESET + ")\n\n"
+
+#     for begin in select_option:
+#         sys.stdout.write(begin)
 #         sys.stdout.flush()
 #         time.sleep(0.02)
-
+#     n = input(Fore.RESET+"Bạn: ")
 #     print(Fore.RESET + "\n-----------------------------\n")
 
-error = "Kiểm tra file! (y/N)\n\n"
-for a in error:
-    sys.stdout.write(a)
+#     option(n)
+
+# elif input_a == "N" or input_a == "n":
+#     select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
+#         "(" + Fore.CYAN + "lời" + Fore.RESET + " " + "/" + Fore.LIGHTCYAN_EX + " " + "chữ" + \
+#         Fore.RESET + " " + "/" + Fore.YELLOW + " " + "lời và chữ" + Fore.RESET + ")\n\n"
+
+#     for begin in select_option:
+#         sys.stdout.write(begin)
+#         sys.stdout.flush()
+#         time.sleep(0.02)
+#     n = input(Fore.RESET+"Bạn: ")
+#     print(Fore.RESET + "\n-----------------------------\n")
+
+#     option(n)
+
+
+# select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
+#     "(" + Fore.CYAN + "lời" + Fore.RESET + " " + "/" + Fore.LIGHTCYAN_EX + " " + "chữ" + \
+#     Fore.RESET + " " + "/" + Fore.YELLOW + " " + "lời và chữ" + Fore.RESET + ")\n\n"
+
+# for begin in select_option:
+#     sys.stdout.write(begin)
+#     sys.stdout.flush()
+#     time.sleep(0.02)
+# n = input(Fore.RESET+"Bạn: ")
+# print(Fore.RESET + "\n-----------------------------\n")
+
+completion = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[{"role": "user", "content": "Xin chào"}]
+)
+
+print("\n")
+reply = completion.choices[0].message.content
+for begin in reply:
+    sys.stdout.write(Fore.YELLOW + begin)
     sys.stdout.flush()
     time.sleep(0.02)
-input_a = input("Bạn: ")
-print(Fore.RESET + "\n-----------------------------\n")
-
-if input_a == "y" or input_a == "Y":
-
-    setup()
-
-    select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
-        "(" + Fore.CYAN + "lời" + Fore.RESET + " " + "/" + Fore.LIGHTCYAN_EX + " " + "chữ" + \
-        Fore.RESET + " " + "/" + Fore.YELLOW + " " + "lời và chữ" + Fore.RESET + ")\n\n"
-
-    for begin in select_option:
-        sys.stdout.write(begin)
-        sys.stdout.flush()
-        time.sleep(0.02)
-    n = input(Fore.RESET+"Bạn: ")
-    print(Fore.RESET + "\n-----------------------------\n")
-
-    option(n)
-
-elif input_a == "N" or input_a == "n":
-    select_option = "Bạn muốn AI diễn đạt bằng lời nói hay câu chữ?" + " " + \
-        "(" + Fore.CYAN + "lời" + Fore.RESET + " " + "/" + Fore.LIGHTCYAN_EX + " " + "chữ" + \
-        Fore.RESET + " " + "/" + Fore.YELLOW + " " + "lời và chữ" + Fore.RESET + ")\n\n"
-
-    for begin in select_option:
-        sys.stdout.write(begin)
-        sys.stdout.flush()
-        time.sleep(0.02)
-    n = input(Fore.RESET+"Bạn: ")
-    print(Fore.RESET + "\n-----------------------------\n")
-
-    option(n)
-
 
 while True:
 
@@ -142,10 +158,11 @@ while True:
         os.system("start https://www.youtube.com/results?search_query=" +
                   searchYt.replace(" ", "+"))
     else:
+        print("\n")
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": x}]
         )
-        option(x)
+        text(x)
         if x == 'tạm biệt':
             break

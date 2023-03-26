@@ -9,13 +9,6 @@ from colorama import Fore, Back, Style
 # init(wrap=False)
 # stream = AnsiToWin32(sys.stderr).stream
 
-engine = pyttsx3.init()
-
-voices = engine.getProperty("voices")
-vi_voice = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\MSTTS_V110_viVN_An"
-engine.setProperty("voice", vi_voice)
-engine.connect
-
 
 def setup():
     check_python = os.system("python --version")
@@ -53,6 +46,3 @@ def setup():
         print(Fore.RESET + "\n-------------------- \n")
         time.sleep(3)
         os.system("python main.py")
-
-
-setup()
